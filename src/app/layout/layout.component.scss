@@ -1,0 +1,26 @@
+
+
+.image-container {
+ background-image: url("../../assets/background.jpg");
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
+    min-height: 650px;
+    min-width: 100%;
+
+   /* Center and scale the image nicely */
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+.bg-image {
+  min-height: 650px;
+  min-width: 100%;
+  background-image: url("../../assets/background.jpg");
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+

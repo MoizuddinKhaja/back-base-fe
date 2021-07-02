@@ -1,0 +1,58 @@
+@import '../../bb-ui/styles/vars';
+.transfer-container{
+  position: absolute;
+    top: 15%;
+    left: 11%;
+    width: 350px;
+
+}
+.card-header{
+  color: white;
+  .word {
+    font-size: large;
+    .dark{
+      font-weight: 600
+    }
+  }
+  background-color:$primary-blue;
+}
+.amount-container{
+  display: flex;
+  .currency-content{
+    padding: .375rem .75rem;
+    line-height: 1.5;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: .25rem 0rem 0rem .25rem;
+  }
+}
+.currencyinput {
+  border: 1px inset #ccc;
+}
+.currencyinput input {
+  border: 0;
+}
+.card-footer{
+  background-color: rgb(255,255,255) !important;
+  border-top: 0px solid rgba(0,0,0,.125) !important;
+}
+.form-group{
+
+    input:invalid~p{
+      color: red;
+    }
+}
+.error{
+  color: red;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none !important;
+    margin: 0!important; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield!important; /* Firefox */
+}

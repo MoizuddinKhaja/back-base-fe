@@ -1,0 +1,53 @@
+@import '../../bb-ui/styles/vars';
+.transaction-container{
+  position: absolute;
+  top: 15%;
+  left: 40%;
+  max-height: 500px;
+  min-width: 45%;
+  .overflow-scroll{
+    max-height: 450px;
+  }
+/*   .word {
+    color: white;
+    font-size: large;
+    font-weight: bolder;
+
+  } */
+  .card-header{
+    .word {
+      color: white;
+      font-size: large;
+      .dark{
+        font-weight: 600
+      }
+    }
+    background-color:$primary-blue;
+  }
+
+}
+.vl {
+ // border-left: 6px solid green;
+  border-style: solid;
+  height: 75px;
+}
+app-transaction-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  div{
+    padding-right: 1em;
+  }
+
+.type-container{
+  font-weight: lighter;
+}
+}
+
+.overflow-scroll {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+.overflow-scroll::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}

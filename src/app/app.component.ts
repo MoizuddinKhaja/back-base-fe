@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import "@fontsource/noto-sans-jp";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

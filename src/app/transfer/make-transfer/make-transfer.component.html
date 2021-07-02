@@ -1,0 +1,62 @@
+<div class="transfer-container card mb-4 rounded-top shadow-sm">
+   <div class="card-header  rounded-top">
+
+     <p class="my-1 fw-normal word"><i class="lni lni-credit-cards p-1"> </i> <span class="dark">Make</span>  Transfer</p>
+  </div>
+  <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+  <div class="card-body">
+
+      <div class="form-group  mb-3">
+        <span  for="from_account">From Account</span>
+        <span class="input-group-text" id="from_account">My Personal Account: <i class="lni lni-euro" [ngStyle]="{'font-weight':'600'}"></i>5824.76</span>
+       <!--  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+      </div>
+      <div class="form-group  mb-3">
+        <span for="to_account">To Account</span>
+        <input required  type="text" class="form-control" id="to_account" name="toAccount" formControlName = "toAccount"  placeholder="type an account name">
+        <p [ngClass]="{':invalid': this.formdata.controls.toAccount.invalid && this.formdata.controls.toAccount.dirty}" *ngIf="( this.formdata.controls.toAccount.invalid && this.formdata.controls.toAccount.dirty) ">This field is mandatory</p>
+      </div>
+      <div class="form-group">
+        <span  for="amount">Amount</span>
+        <div class=" input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><span class="lni lni-euro" [ngStyle]="{'font-weight':'600'}"></span></div>
+          </div>
+          <input type="number" required min="1"  class="form-control" id="amount" #amountRef  name="amount" formControlName = "amount" placeholder="specify the amount" [ngStyle]="{'width':'auto'}" (keypress)="keyPressNumbers($event)" (keyup)="keyup(amountRef)">
+          <p [ngClass]="{'error': (this.formdata.controls.amount.invalid && this.formdata.controls.amount.dirty) || this.validateAmount}" *ngIf=" (this.formdata.controls.amount.invalid && this.formdata.controls.amount.dirty) || this.validateAmount">{{errorMessage}}</p>
+        </div>
+      </div>
+  </div>
+<div class="card-footer text-end">
+  <app-submit-button class="custom-color"(submitForm)="submitForm($event)" ></app-submit-button>
+</div>
+</form>
+</div>
+
+
+<div class="modal" id="myModal" [style.display] ="popup ? 'block':'none'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Review Transfer</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close($event)">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+     <p class="italic">Are you ready to send out this transfer?</p>
+     <p class="bold"> <span>It will be send to account:</span> </p>
+     <p class="normal">{{toAccount}}</p>
+     <p class="bold"><span> With the amount of:</span></p>
+     <p class="normal">{{ amount | currency:"EUR":"symbol"}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="close($event)">Close</button>
+        <button type="button" class="btn btn-primary" (click)="sendTransfer($event)">Send Transfer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

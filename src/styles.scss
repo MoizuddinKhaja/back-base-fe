@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+/* @font-face {
+  font-family: "Noto Sans JP";
+  src: url(assets/font/NotoSansJP-Regular.otf) format("opentype");
+} */
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: rgb(219,108,54) !important;
+  border-color: rgb(219,108,54) !important;
+}
+body{
+font-family: "Noto Sans JP";
+}
+.merchant-details{
+  flex:1;
+}
+
+.input-group-text{
+  padding: .75rem .75rem !important;
+  border-radius: .25rem 0rem 0rem .25rem!important;
+}
+::placeholder {
+ font-style: italic;
+}
+.rounded-top {
+  border-top-left-radius: 1rem!important;
+  border-top-right-radius: 1rem!important;
+}
+.card{
+  border:0px;
+}
